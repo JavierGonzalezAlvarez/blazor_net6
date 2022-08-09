@@ -1,0 +1,56 @@
+﻿@page "/counter"
+
+<PageTitle>Counter adn something more</PageTitle>
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCountIncrement</p>
+<p role="status">Current count: @currentCountDecrement</p>
+<p role="status" style="text-decoration:underline;">Status: @msgInitial</p>
+
+<p role="status">We are ....: @currentMsg(msg)</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me to increment</button>
+<button class="btn btn-primary" @onclick="DecrementCount">Click me to decrement</button>
+
+<Footer></Footer>
+
+
+@code {
+    string msgInitial = "key";
+    string msg = "";
+
+    private int currentCountIncrement = 0;
+
+    private void IncrementCount()
+    {
+        string value = "add";
+        currentCountIncrement++;
+        currentMsg(value);
+    }
+
+    private int currentCountDecrement = 0;
+
+    private void DecrementCount()
+    {
+        string value = "substract";
+        currentCountDecrement--;
+        currentMsg(value);
+    }
+
+
+    string currentMsg(string value)
+    {
+        if (value == "add")
+        {
+            msg = "Adding";
+            Console.WriteLine("adding");
+        }
+        else if (value == "substract")
+        {
+            msg = "Substracting";
+        }
+        return msg;
+    }
+
+
+}

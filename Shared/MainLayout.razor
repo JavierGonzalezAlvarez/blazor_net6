@@ -1,0 +1,21 @@
+﻿@inherits LayoutComponentBase
+
+<PageTitle>BlazorServer</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <a href="https://docs.microsoft.com/aspnet/" target="_blank">Documentation of ASP.Net</a>
+            <a href="https://docs.microsoft.com/es-es/aspnet/core/blazor/?WT.mc_id=dotnet-35129-website&view=aspnetcore-6.0"
+                target="_blank">Documentation of Blazor</a>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
